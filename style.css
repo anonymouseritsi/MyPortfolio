@@ -4,13 +4,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
     scroll-behavior: smooth;
 }
 
 body {
     background: rgba(0, 7, 45, 1);
-    color: #333; 
+    color: white; 
     scroll-behavior: smooth;
 }
 
@@ -41,7 +40,11 @@ nav ul li {
     cursor: pointer;
     font-size: 20px;
 }
-nav ul li :hover {
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+nav ul li a:hover {
     color: rgba(250, 226, 12, 1);
 }
 
@@ -65,17 +68,19 @@ nav .logo {
     width: 100%;
     min-height: 100vh;
     background: rgba(0, 7, 45, 1);
-    padding: 0 10%;
+    padding: 6rem 10% 2rem;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     position: relative;
+    gap: 3rem;
 }
 
 .header h1 {
-    margin-top: 100px;
-    font-size: 9vw;
-    line-height: 10vw;
+    margin-top: 0;
+    font-size: 6vw;
+    line-height: 7vw;
     color: rgba(250, 226, 12, 1);
 }
 
@@ -104,33 +109,34 @@ nav .logo {
 
 /* User image styling */
 .user-img {
-    width: 80%;
-    max-width: 480px;
-    position: absolute;
-    right: 5%;
-    bottom: 0%;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 4px solid rgba(250, 226, 12, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
 }
 
 /* Section styling */
 section {
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
+    min-height: auto;
+    padding: 4rem 8% 4rem;
 }
 .section-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: auto;
+    padding: 20px 0;
     background: rgba(0, 7, 45, 1);
 }
 
 .section-content-left {
-    width: 40%;
+    width: 30%;
 }
 
 .section-content-right {
-    width: 60%;
+    width: 70%;
 }
 
 .section-content-left h2 {
@@ -150,8 +156,14 @@ section {
 }
 
 #about .about-header img {
-    max-width: 400px;
+    width: 350px;
+    height: 450px;
+    margin-top: 5rem;
     margin-bottom: 0; /* Remove margin-bottom to remove padding */
+    border-radius: 50%;
+    border: 4px solid rgba(250, 226, 12, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
 }
 
 #about h1 {
@@ -164,11 +176,46 @@ section {
     color: white;
     font-size: 2em;
     margin-bottom: 20px;
+    text-transform: capitalize;
 }
 
 #about p {
     font-size: 1.2em;
     line-height: 1.5;
+}
+
+.skills-heading {
+    margin-top: 1.5rem;
+    font-size: 1.5em;
+    color: rgba(250, 226, 12, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.skills-list {
+    margin-top: 0.75rem;
+    margin-left: 1.25rem;
+    list-style: disc;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.tools-list {
+    margin-top: 0.75rem;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tools-list li {
+    background: rgba(250, 226, 12, 1);
+    color: black;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95em;
+    font-weight: 600;
 }
 
 /* Works section styling */
@@ -192,16 +239,25 @@ section {
 .works-container {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 30px;
     gap: 5rem;
 }
 
 .works-container img {
-    width: 500px; 
-    height: 300px;
+    width: 100%;
+    max-width: 500px; 
+    height: 280px;
+    object-fit: cover;
     border: 2px solid white;
     border-radius: 10px;
     transition: transform 0.3s ease; 
+}
+
+.work-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
 }
 
 .works-container img:hover {
@@ -209,37 +265,134 @@ section {
 }
 
 .contacts-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .contacts-info .images {
     display: flex;
     align-items: center;
-    gap: 30px; 
-    font-size: 30px;
+    gap: 1rem; 
+    font-size: 1.1rem;
 }
 
 
 
 .contacts-info img {
-    width: 300px; 
-    height: 150px;
-    border-radius: 10px;
-    transition: transform 0.3s ease; 
+    width: 56px; 
+    height: 56px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 
 .contacts-info img:hover {
-    transform: scale(1.1); /* Slightly enlarges the image on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
-#contacts h1 {
+/* Contact section */
+.contact-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
     text-align: center;
-    font-size: 5em;
-    margin: 40px 0;
-    color: white;
+}
+
+.contact-heading {
+    font-size: 3em;
+    margin-bottom: 0.75rem;
+}
+
+.contact-heading span {
+    color: rgba(250, 226, 12, 1);
+}
+
+.contact-subtitle {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d0d4ff;
+}
+
+.contact-form {
+    background: #020824;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row input,
+.form-row textarea {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(5, 15, 60, 0.9);
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.form-row textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-btn {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background: rgba(250, 226, 12, 1);
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+    background: rgb(255, 238, 130);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+}
+
+.contact-details {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.98rem;
+}
+
+.contact-detail img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 
 footer {
@@ -341,21 +494,20 @@ footer {
 
     .header {
         min-height: auto;
-        padding: 0;
+        padding: 7rem 8% 2rem;
+        flex-direction: column;
+        text-align: center;
     }
 
     .user-img {
-        width: 100%;
-        right: auto;
-        position: relative;
-        margin-top: 200px;
+        width: 280px;
+        height: 280px;
+        margin: 1.5rem auto 0;
     }
 
     .header-content {
-        position: absolute;
-        padding: 0 10%;
-        z-index: 2;
-        margin-top:30px;
+        position: static;
+        padding: 0;
         text-align: center;
         justify-content: center;
     }
@@ -378,23 +530,21 @@ footer {
     .works-container a img {
         width: 250px;
         height: 150px;
+        object-fit: cover;
         text-align: center;
         justify-content: center;
     }
 
-    .contacts-info img {
-        width: 100px;
-        height: 80px;
-        text-align: center;
-        justify-content: center;
+    .form-row {
+        flex-direction: column;
     }
-    .contacts-info span {
-        font-size: 20px;
-        text-align: center;
-        justify-content: center;
+
+    .contact-form {
+        padding: 1.5rem;
     }
-    .contacts-info {
-        grid-template-columns: 1fr;
+
+    .contact-heading {
+        font-size: 2.3em;
     }
     
 
@@ -403,9 +553,12 @@ footer {
         font-size: 3em;
     }
 
-    #about h1,
-    #about h2 {
+    #about h1 {
         font-size: 2em;
+    }
+
+    #about h2 {
+        font-size: 1.5em;
     }
 
     #about p {
